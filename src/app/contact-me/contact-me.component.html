@@ -1,0 +1,96 @@
+<div class="contact-wrapper">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form">
+    <h2 class="title">Contact Me</h2>
+    <p class="message">
+      Please fill out the form below, and I'll get back to you shortly.
+    </p>
+
+    <!-- Name Field -->
+    <div class="form-group">
+      <label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="input"
+          placeholder="Name"
+          required
+        />
+      </label>
+      <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="text-danger">
+        Name is required (Min. 3 characters).
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="input"
+          placeholder="Email"
+          required
+        />
+      </label>
+      <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="text-danger">
+        <div *ngIf="contactForm.get('email')?.hasError('required')">Email is required.</div>
+        <div *ngIf="contactForm.get('email')?.hasError('email')">Invalid email address.</div>
+      </div>
+    </div>
+
+    <!-- Phone Field -->
+    <div class="form-group">
+      <label>
+        <input
+          type="text"
+          id="phone"
+          formControlName="phone"
+          class="input"
+          placeholder="Phone"
+          required
+        />
+      </label>
+      <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="text-danger">
+        Phone number is required (10-15 digits).
+      </div>
+    </div>
+
+    <!-- Request Field -->
+    <div class="form-group">
+      <label>
+        <textarea
+          id="request"
+          formControlName="request"
+          class="input"
+          rows="4"
+          placeholder="Brief for Your Request"
+          required
+        ></textarea>
+      </label>
+      <div *ngIf="contactForm.get('request')?.touched && contactForm.get('request')?.invalid" class="text-danger">
+        Brief for your request is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit" [disabled]="contactForm.invalid">
+      Submit
+    </button>
+
+    <!-- Contact Directly Section -->
+    <p class="contact-direct">Or you can contact me directly:</p>
+    <div class="social-links">
+      <a href="https://wa.me/01066232186" target="_blank">
+        <img src="assets/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.linkedin.com/in/saad-hassan-203496280/" target="_blank">
+        <img src="assets/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:saadhassansaad1997@example.com">
+        <img src="assets/gmail.png" alt="Gmail">
+      </a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+<div id="projects" >
+  <div *ngFor="let project of project; let i = index" class="card" [ngClass]="'row-' + getRowClass(i)">
+    <div class="profile-pic">
+      <img [src]="'http://localhost:3000/' + project.img" alt="{{ project.title }}" />
+    </div>
+
+    <div class="mail">
+      <a href="mailto:saadhassansaad1997@example.com">
+        <img src="assets/gmail.png" alt="Gmail">
+      </a>
+    </div>
+
+    <div class="bottom">
+      <div class="content">
+        <span class="name">{{ project.title }}</span>
+        <span class="about-me">{{ project.desc }}</span>
+      </div>
+
+      <div class="bottom-bottom">
+        <div class="social-links">
+          <a [href]="project.link" target="_blank">
+            <img src="assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" />
+          </a>
+          <a [href]="project.livedemo" target="_blank">
+            <img src="assets/livedemo.png" alt="Live Demo" />
+          </a>
+        </div>
+
+        <a routerLink="/contact-me" class="contact-btn">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</div>

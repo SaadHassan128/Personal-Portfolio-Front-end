@@ -1,0 +1,85 @@
+form {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+form:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(122, 150, 255, 0.5);
+  color: #7a96ff;
+  border: 2px solid DodgerBlue;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #f5f5f5;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.form-group input:focus {
+  background: #e8f0fe;
+  outline: none;
+  border: 2px solid #007bff;
+}
+
+.text-danger {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(to right, #007bff, #00a8ff);
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #0056b3, #007bff);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+}
+
+@media (max-width: 500px) {
+  form {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}

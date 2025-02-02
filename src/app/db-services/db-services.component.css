@@ -1,0 +1,36 @@
+#services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  justify-content: space-around;
+  margin: 150px;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+}
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-style: italic;
+}
+.card-img-top {
+  width: 285px;
+  height: 200px;
+  border-radius: 10px;
+}
+.img {
+  width: 100px;
+  height: 100px;
+}
+a {
+  margin-bottom: 15px;
+}

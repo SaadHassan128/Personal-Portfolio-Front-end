@@ -1,0 +1,43 @@
+<div class="about-me-container">
+  <!-- About Me Section -->
+  <div class="about-me-section">
+    <div class="hover-box">
+      <h1 style="color: #7a96ff; font-weight: 900">About Me</h1>
+      <div class="text-content">
+        <p>
+          I'm a Software Engineer and Computer Science graduate with a passion
+          for creating impactful digital solutions. Currently, <strong class="strong">I'm an
+          Instructor and Vice CTO at ADA Egypt</strong>, where I
+          mentor aspiring developers and lead innovative projects. My technical
+          expertise spans front-end and back-end development using the MEAN
+          Stack and crafting intuitive UI/UX designs that align functionality
+          with user needs.
+        </p>
+        <p>
+          Beyond my technical expertise, I bring a unique blend of creativity
+          and analytical thinking to every project. I am dedicated to
+          collaborating with teams to deliver scalable and efficient web
+          applications while fostering a culture of learning and innovation
+          through my role as a Web Development Instructor. My journey in tech is
+          fueled by a commitment to staying ahead of the ever-evolving industry
+          and delivering solutions that are both functional and visually
+          engaging.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+      <h3 style="color: #7a96ff; font-weight: 900">Skills</h3>
+      <ul id="skills">
+        <li *ngFor="let skill of skills">
+          <img [src]="'http://localhost:3000/' + skill.img" alt="" />
+          {{ skill.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+</div>

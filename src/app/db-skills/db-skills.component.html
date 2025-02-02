@@ -1,0 +1,21 @@
+<h3 class="skills-title">Skills</h3>
+<ul id="skills">
+  @for(skill of skills; track $index){
+    <li>
+      <img [src]="'http://localhost:3000/' + skill.img" alt="{{ skill.name }}" />
+      <span class="skill-name">{{ skill.name }}</span>
+      <div class="button-group">
+        <button [routerLink]="'/edit-skill/' + skill._id" class="edit-btn">
+          Edit
+        </button>
+        <button (click)="deleteSkill(skill._id)" class="delete-btn">
+          Delete
+        </button>
+      </div>
+    </li>
+  }
+</ul>
+
+<button class="add-skill-btn" [routerLink]="'/dashboard/add-skill'">
+  Add New Skill
+</button>

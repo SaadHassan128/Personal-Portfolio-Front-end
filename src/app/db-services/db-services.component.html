@@ -1,0 +1,73 @@
+<h3
+  style="
+    color: #cfcfcf;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 15px;
+    text-align: center;
+  "
+>
+  services
+</h3>
+<ul
+  id="services"
+  style="
+    color: #cfcfcf;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: italic;
+  "
+>
+  @for(service of services; track $index){
+  <li>
+    <img [src]="'http://localhost:3000/' + service.img" alt="" class="img" />
+    {{ service.title }}
+    <div class="d-flex flex-row justify-content-center àlign-items-center mt-3">
+      <button
+        [routerLink]="'/edit-service/' + service._id"
+        class="btn btn-primary me-2"
+        style="line-height: 100%"
+      >
+        Edit
+      </button>
+      <button (click)="togleId(service._id)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">
+        Delete
+      </button>
+    </div>
+  </li>
+  }
+</ul>
+
+<button
+  class="btn btn-primary"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 47%;
+  "
+  [routerLink]="'/add-servic'"
+>
+  Add new service
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">no</button>
+        <button (click)="deleteService(deleteId)" type="button" class="btn btn-primary" data-bs-dismiss="modal">yes</button>
+      </div>
+    </div>
+  </div>
+</div>

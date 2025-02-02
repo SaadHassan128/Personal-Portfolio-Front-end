@@ -1,0 +1,33 @@
+<h3 class="section-title">Projects</h3>
+
+<div id="projects">
+  @for (project of projects; track $index) {
+  <div class="card">
+    <div class="profile-pic">
+      <img [src]="'http://localhost:3000/' + project.img" alt="Project Image" />
+    </div>
+
+    <div class="bottom">
+      <div class="content">
+        <span class="name">{{ project.title }}</span>
+        <span class="about-me">{{ project.desc }}</span>
+      </div>
+
+      <div class="bottom-bottom">
+        <button [routerLink]="'/edit-projects/' + project._id" class="edit-btn">Edit</button>
+        <button class="delete-btn" (click)="project?._id && confirmDelete(project._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+
+<button class="add-project-btn" [routerLink]="'/dashboard/add-project'">Add New Project</button>
+
+<script>
+  function confirmDelete(projectId) {
+    if (confirm("Are you sure you want to delete this project? This action cannot be undone!")) {
+      deleteProjects(projectId);
+    }
+  }
+</script>

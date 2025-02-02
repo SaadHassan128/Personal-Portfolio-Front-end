@@ -1,0 +1,42 @@
+div.list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.dashboard-container {
+  min-height: calc(100vh - 225px);
+}
+
+button {
+  background: DarkSlateBlue;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: LightCyan;
+  color: #7a96ff;
+  border: 2px solid DodgerBlue;
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(122, 150, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 80%;
+  }
+}

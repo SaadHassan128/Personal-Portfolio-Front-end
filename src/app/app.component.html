@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="assets\logo.png" alt="Portfolio Icon" class="brand-icon" />
+      <span class="brand-text">MyPortfolio</span>
+    </a>
+
+    <div class="hamburger-menu" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <ul class="navbar-links" id="navbarMenu">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about-me">About Me</a></li>
+      <li><a routerLink="/services">Services</a></li>
+      <li><a routerLink="/projects">Projects</a></li>
+      <li><a routerLink="/resume">Resume</a></li>
+      <li><a routerLink="/contact-me">Contact Me</a></li>
+      
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a
+      href="https://www.facebook.com/profile.php?id=100009744999305"
+      target="_blank"
+      >Facebook</a
+    >
+    <a href="https://wa.me/201066232186" target="_blank">WhatsApp</a>
+    <a href="mailto:saadhassansaad1997@gmail.com">Gmail</a>
+    <a href="https://github.com/SaadHassan128" target="_blank">GitHub</a>
+    <a
+      href="https://www.linkedin.com/in/saad-hassan-203496280/"
+      target="_blank"
+      >LinkedIn</a
+    >
+  </div>
+  <div class="footer-info">
+    <p>Address: Cairo, Maadi</p>
+    <p>© {{ currentYear }} Saad Hassan. All rights reserved.</p>
+  </div>
+</footer>

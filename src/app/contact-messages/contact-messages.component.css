@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #cfcfcf;
+    background: #0d0d0d;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #b3c7ff;
+    margin-bottom: 20px;
+  }
+  
+  h2, h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #b3c7ff;
+  }
+  table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    background: #1e1e2f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(179, 199, 255, 0.2);
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    color: #e0e0e0;
+  }
+  
+  th {
+    background: #4b3f85;
+    color: white;
+    font-size: 18px;
+  }
+  
+  td {
+    font-size: 16px;
+    background: #29293d;
+  }
+  
+  tr:hover td {
+    background: rgba(179, 199, 255, 0.2);
+    color: white;
+  }
+  
+  .delete-btn {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background: darkred;
+  }
+  
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal-content h5 {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .cancel-btn, .confirm-btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .cancel-btn {
+    background: gray;
+    color: white;
+  }
+  
+  .confirm-btn {
+    background: dodgerblue;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background: darkgray;
+  }
+  
+  .confirm-btn:hover {
+    background: royalblue;
+  }
+  

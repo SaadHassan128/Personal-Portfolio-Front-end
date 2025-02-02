@@ -1,0 +1,63 @@
+<div class="services">
+  <div id="services">
+    <button class="service-btn" (click)="openModal('instructor')">
+      Instructor - Web Development 🎓
+    </button>
+    <button class="service-btn" (click)="openModal('frontend')">
+      Front-End Development 🖥️
+    </button>
+    <button class="service-btn" (click)="openModal('backend')">
+      Back-End Development 🔧
+    </button>
+  </div>
+</div>
+
+
+<div class="modal-overlay" *ngIf="selectedService" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+ 
+    <span class="close-btn" (click)="closeModal()">&times;</span>
+    
+    <div class="modal-body">
+      <img *ngIf="selectedService === 'instructor'" 
+           src="assets\instructor.png" 
+           alt="Instructor - Web Development" 
+           class="modal-img">
+           
+      <img *ngIf="selectedService === 'frontend'" 
+           src="assets\frontend.png" 
+           alt="Front-End Development" 
+           class="modal-img">
+           
+      <img *ngIf="selectedService === 'backend'" 
+           src="assets\backend.png" 
+           alt="Back-End Development" 
+           class="modal-img">
+      <div class="modal-text">
+        <h2>{{ servicesData[selectedService].title }}</h2>
+        <p>{{ servicesData[selectedService].desc }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-box">
+  <div class="contact-text">Ask For Help</div>
+  
+  <div class="contact-icons">
+    <a href="https://wa.me/01066232186" target="_blank" class="contact-icon">
+      <img src="assets\whatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="mailto:saadhassansaad@gmail.com" target="_blank" class="contact-icon">
+      <img src="assets\gmail.png" alt="Gmail">
+    </a>
+    <a href="https://www.linkedin.com/in/saad-hassan-203496280/" target="_blank" class="contact-icon">
+      <img src="assets\linkedin.png" alt="LinkedIn">
+    </a>
+    <a href="tel:+201066232186" class="contact-icon">
+      <img src="assets\telephone.png" alt="Phone">
+    </a>
+  </div>
+</div>
+
+

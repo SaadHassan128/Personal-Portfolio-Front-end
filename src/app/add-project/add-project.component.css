@@ -1,0 +1,56 @@
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #7a96ff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.save-btn {
+  background: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #222;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    max-width: 90%;
+    padding: 30px;
+  }
+}
