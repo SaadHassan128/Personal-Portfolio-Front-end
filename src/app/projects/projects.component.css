@@ -98,10 +98,15 @@
 
 .card .bottom .content {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 1.5rem;
   right: 1.5rem;
   height: 160px;
+  display: none;
+  transition: display 0.5s ease-in-out;
+}
+.card:hover .bottom .content {
+  display: block;
 }
 
 .card .bottom .content .name {
@@ -117,6 +122,8 @@
   font-size: 1rem;
   color: white;
   opacity: 0.9;
+  height: 50px;
+  overflow: hidden;
 }
 
 .card .bottom .bottom-bottom {

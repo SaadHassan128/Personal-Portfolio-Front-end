@@ -2,21 +2,27 @@
   <h2 class="form-title">Add New Project</h2>
 
   <div class="form-group">
-      <label for="name">Project Name</label>
-      <input type="text" id="title" formControlName="title" required>
+    <label for="name">Project Name</label>
+    <input type="text" id="title" formControlName="title" required />
 
-      <label for="img">Upload Image</label>
-      <input type="file" id="img" formControlName="img" accept="image/*">
+    <label for="img">Upload Image</label>
+    <input type="file" id="img" formControlName="img" accept="image/*" />
 
-      <label for="desc">Description</label>
-      <textarea name="description" formControlName="desc" rows="3" required></textarea>
+    <label for="desc">Description</label>
+    <textarea
+      name="description"
+      formControlName="desc"
+      rows="3"
+      required
+    ></textarea>
 
-      <label for="link">Project Link</label>
-      <input type="url" name="link" formControlName="link" required>
+    <label for="link">Project Link</label>
+    <input type="url" name="link" formControlName="link" required />
 
-      <label for="livedemo">Live Demo Link</label>
-      <input type="url" name="livedemo" formControlName="livedemo">
+    <label for="livedemo">Live Demo Link</label>
+    <input type="url" name="livedemo" formControlName="livedemo" />
 
-      <button routerLink="/dashboard/db-projects" class="save-btn" (click)="saveProject()">Save</button>
+    <button class="save-btn" (click)="saveProject()">Save</button>
   </div>
 </form>
+<p>{{ error_msg }}</p>

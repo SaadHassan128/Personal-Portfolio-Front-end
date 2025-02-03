@@ -2,12 +2,12 @@
   <h2 class="form-title">Edit Skill</h2>
 
   <div class="form-group">
-      <label for="name">Skill Name</label>
-      <input type="text" id="name" formControlName="name" required>
+    <label for="name">Skill Name</label>
+    <input type="text" id="name" formControlName="name" required />
 
-      <label for="img">Upload Image</label>
-      <input type="file" id="img" formControlName="img" accept="image/*">
+    <label for="img">Upload Image</label>
+    <input type="file" id="img" formControlName="img" accept="image/*" />
 
-      <button routerLink="/dashboard/db-skills" class="save-btn" (click)="saveSkill()">Save</button>
+    <button class="save-btn" (click)="saveSkill()">Save</button>
   </div>
 </form>

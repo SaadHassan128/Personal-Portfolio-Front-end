@@ -2,28 +2,29 @@
   <h2>Dashboard - Contact Messages</h2>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Request</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let message of contactMessages">
-      <td>{{ message.name }}</td>
-      <td>{{ message.email }}</td>
-      <td>{{ message.phone }}</td>
-      <td>{{ message.request || "N/A" }}</td>
-      <td>
-        <button class="delete-btn" (click)="confirmDelete(message._id)">
-          Delete
-        </button>
-        
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="messages-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Request</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let message of contactMessages">
+        <td>{{ message.name }}</td>
+        <td>{{ message.email }}</td>
+        <td>{{ message.phone }}</td>
+        <td>{{ message.request || "N/A" }}</td>
+        <td>
+          <button class="delete-btn" (click)="confirmDelete(message._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

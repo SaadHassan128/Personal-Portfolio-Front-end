@@ -24,9 +24,9 @@ export class SignInComponent {
     this.signin
       .signin(this.signIn.value.name, this.signIn.value.password)
       .subscribe((res) => {
-        if (res.status === 'Succsess') {
+        if (res.status === 'success') {
           this.router.navigate(['/dashboard']);
-          this.signin.auth();
+          this.signin.auth(res.token);
         } else {
           alert(res.message);
         }

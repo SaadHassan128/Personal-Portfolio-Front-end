@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {  ProjectsService } from '../db-projects/projects.service';
+import { ProjectsService } from '../db-projects/projects.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Project } from '../projects/projects.service';
 
@@ -30,30 +30,39 @@ export class EditProjectsComponent {
       this.currentproject = res.projects;
       console.log(this.currentproject);
       this.editProjectForm.patchValue({
-        title: this.currentproject.title, desc: this.currentproject.desc , link: this.currentproject.link, livedemo: this.currentproject.livedemo})
-
-      
+        title: this.currentproject.title,
+        desc: this.currentproject.desc,
+        link: this.currentproject.link,
+        livedemo: this.currentproject.livedemo,
+      });
     });
   }
   saveProject() {
-    
     const element = document.getElementById('img') as HTMLInputElement;
     const file = element.files ? element.files[0] : null;
     const formData = new FormData();
-    if(file){
+    this.currentproject.title = this.editProjectForm.value.title;
+    this.currentproject.desc = this.editProjectForm.value.desc;
+    this.currentproject.link = this.editProjectForm.value.link;
+    this.currentproject.livedemo = this.editProjectForm.value.livedemo;
+    if (file) {
       formData.append('file', file);
+      this.fetch.uploadImg(formData).subscribe((res) => {
+        this.currentproject.img = res.filepath;
+        this.fetch
+          .updateProject(this.currentid, this.currentproject)
+          .subscribe((res) => {
+            console.log(res);
+            this.router.navigate(['/dashboard/db-projects']);
+          });
+      });
+    } else {
+      this.fetch
+        .updateProject(this.currentid, this.currentproject)
+        .subscribe((res) => {
+          console.log(res);
+          this.router.navigate(['/dashboard/db-projects']);
+        });
     }
-    this.fetch.uploadImg(formData).subscribe((res) => {
-      this.currentproject.title = this.editProjectForm.value.title;
-      this.currentproject.desc = this.editProjectForm.value.desc;
-      this.currentproject.img = res.filepath;
-      this.currentproject.link = res.value.link;
-      this.currentproject.livedemo = res.value.livedemo;
-      this.fetch.updateProject(this.currentid, this.currentproject).subscribe((res) => {
-        console.log(res);
-        
-      })
-    })
-    
   }
 }

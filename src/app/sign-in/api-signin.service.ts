@@ -3,22 +3,22 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiSigninService {
-
   http = inject(HttpClient);
-  isAuthenticated = false;
-  auth(){
-    this.isAuthenticated = true;
+  auth(token: string) {
+    localStorage.setItem('jwt', token);
   }
 
-  signin(name : string , password : string) : Observable <any>{
-    
-    return this.http.post("http://localhost:3000/signIn" , {name , password});
-    
+  signin(name: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3000/signin', { name, password });
   }
-  checkAuth() : boolean {
-    return this.isAuthenticated;
+  checkAuth(): boolean {
+    // return this.isAuthenticated;
+    if (localStorage.getItem('jwt')) {
+      return true;
+    }
+    return false;
   }
 }
